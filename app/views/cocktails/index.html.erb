@@ -3,3 +3,7 @@
 <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
 <% end %>
 <p><%= link_to "Add a new cocktail", new_cocktail_path %></p>
+<%= cl_image_tag("k0lpxa3jnv2eafxxamo7",
+      width: 400, height: 300, crop: :fill) %>
+<%= cl_image_tag("sa4wycfmuhqhnlfyr6ko",
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
