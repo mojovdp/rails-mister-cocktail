@@ -9,8 +9,6 @@ require 'open-uri'
 
 puts 'Creating ingredients...'
 
-Ingredient.destroy_all
-
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 response_serialised = open(url).read
 results = JSON.parse(response_serialised)
@@ -21,25 +19,11 @@ ingredients.each do |ingredient|
   Ingredient.create!(name: ingredient['strIngredient1'])
 end
 
-Cocktail.destroy_all
-
 puts 'Creating cocktails...'
 
 cocktails_attributes = [
   {
-    name:         'Mojito'
-  },
-  {
-    name:         'White Russian'
-  },
-  {
     name:         'Bloody Mary'
-  },
-  {
-    name:         'Old Fashioned'
-  },
-  {
-    name:         'Pinha Colada'
   }
 ]
 Cocktail.create!(cocktails_attributes)
